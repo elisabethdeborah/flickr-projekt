@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flickr-api</title>
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <section class="banner">
+            <h1 id="main-header">flickr</h1>                         
+            <h2 id="sub-header">API project</h2>        <!--header-underrubrik-->
+        </section>
+        <section class="search-container">
+            <form class="search-box">  <!--sök-box-->
+                <h1>Sök bild här</h1>
+                <aside class="search-field">
+                    <input type="text" id="query" required>
+                    <button type="submit" id="search-button">Sök</button>
+                </aside>
+            </form>
+            <aside class="radio-buttons-container">
+                <h3 class="image-count-section">Välj antal bilder per sida</h3>    <!--antal-bilder-del-->
+                <section class="radio-buttons">
+                    <input type="radio" name="numberOfImagesPerPage" id="number-of-images-per-page-10"> <!--antalBilderPerSida-->
+                    <label for="radio">10</label>
+                    <input type="radio" name="numberOfImagesPerPage" id="number-of-images-per-page-25" checked>
+                    <label for="radio">25</label>
+                    <input type="radio" name="numberOfImagesPerPage" id="number-of-images-per-page-50">
+                    <label for="radio">50</label>
+                </section>
+            </aside>
+            <h3 id="filter-link">Filtrera</h3>    <!--filtrera-länk-->
+        </section>
+    </header>
+    <main class="start-hidden">   <!--start-dold-->
+                <section class="filter-buttons hide-filter-alternative display-none">    <!--filter-buttons dölj-filter-alternativ display-none-->
+                    <article class="popularity">   <!--popularitet-->
+                        <h3 class="filter-header">Sortera</h3>  <!--filter-rubrik-->
+                        <label for="radio">Sortera efter relevans</label>
+                        <input type="radio" name="filter" id="filter-relevance" checked> <!--filter-relevans-->
+                        <label for="radio">Sortera efter datum, senast först</label>
+                        <input type="radio" name="filter" id="filter-date-descending"> <!--filter-datum-fallande-->
+                        <label for="radio">Sortera efter datum, tidigast först</label>
+                        <input type="radio" name="filter" id="filter-date-ascending">  <!--filter-datum-stegrande-->
+                    </article>
+                    <article class="image-type">  <!--bild-typ-->
+                        <h3 class="filter-header">Typ av bilder</h3> 
+                        <label for="checkbox">Foton</label>
+                        <input type="checkbox" name="filter" id="content-type-photos">   <!--content-type-foton-->
+                        <label for="checkbox">Screenshots</label>
+                        <input type="checkbox" name="filter" id="content-type-screenshots">   
+                        <label for="checkbox">Other</label>
+                        <input type="checkbox" name="filter" id="content-type-other">       
+                    </article>
+                    <article class="date">                                                     <!--datum-->
+                        <h3 class="filter-header">Datum</h3>
+                        <label for="checkbox">Senaste veckan</label>
+                        <input type="checkbox" name="filter" id="upload-date-week">            <!--upload-date-vecka-->
+                        <label for="checkbox">Senaste 30 dagarna</label>
+                        <input type="checkbox" name="filter" id="upload-date-month">        <!--upload-date-månad-->
+                        <label for="checkbox">Senaste året</label>
+                        <input type="checkbox" name="filter" id="upload-date-year">           <!--upload-date-år-->
+                    </article>
+                    <article class="geo-context-article">                                         <!--miljö-->
+                        <h3 class="filter-header">Bild-miljö</h3>
+                        <label for="radio">Inomhus</label>
+                        <input type="radio" name="filter-miljö" id="geo-context-indoors">   <!--geo-context-inomhus-->
+                        <label for="radio">Utomhus</label>
+                        <input type="radio" name="filter-miljö" id="geo-context-outdoors">   <!--geo-context-utomhus-->
+                    </article>
+                </section>
+            </aside>
+        <section class="result display-none"> <!--resultat display-none-->
+            <h2 id=result-header></h2>    <!--resultat-rubrik-->
+            <ul id="image-list"></ul> <!--bild-lista-->
+            <aside class="move-on"></aside>
+        </section>
+    </main>
+   
+    <script type="module" src="/moduler/main.js"></script>
+</body>
+</html>
